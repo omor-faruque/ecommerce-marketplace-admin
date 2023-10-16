@@ -1,0 +1,21 @@
+<div class="container">
+    <button class="styled-button m-10" (click)="showNewProductTemplate=!showNewProductTemplate">Add new Product</button>
+</div>
+<ng-container *ngIf="!showNewProductTemplate && !showUpdateProductTemplate">
+    <div class="container">
+        <div class="card-container">
+            <ng-container *ngFor="let item of products">
+                <app-product-card [product]="item" (deleteProductEvent)="deleteProduct($event)" (updateProductEvent)="setProductToUpdate($event)"></app-product-card>
+                
+            </ng-container>
+        </div>
+    </div>
+</ng-container>
+
+<div class="container mb-16" *ngIf="showNewProductTemplate">
+    <app-product-form (productEvent)="addProduct($event)" (cancelEvent)="showNewProductTemplate=false" [pageHeader]="'ADD PRODUCT'"></app-product-form>
+</div>
+
+<div class="container mb-16" *ngIf="showUpdateProductTemplate">
+    <app-product-form [product]="productToUpdate" (productEvent)="updateProduct($event)" (cancelEvent)="showUpdateProductTemplate=false"  [pageHeader]="'UPDATE PRODUCT'"></app-product-form>
+</div>

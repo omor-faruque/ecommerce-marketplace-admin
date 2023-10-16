@@ -1,0 +1,42 @@
+<div class="container">
+    <h3 class="mb-16">{{pageHeader}}</h3>
+    <div class="form-container mb-16">
+        <form>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" [(ngModel)]="product.name" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" [(ngModel)]="product.price" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <!-- <input type="text" id="category" name="category" [(ngModel)]="product.categoryName" required> -->
+
+                <select [(ngModel)]="product.categoryName" id="category" name="category" class="w-100">
+                    <option *ngFor="let option of categoryOptions" [value]="option.name">{{ option.name }}</option>
+                  </select>
+            </div>
+
+            
+
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" [(ngModel)]="product.description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="image">Image URL:</label>
+                <input type="url" id="image" name="image" [(ngModel)]="product.image" required>
+            </div>
+            <button class="styled-button" (click)="onSubmit()">Submit</button>
+            <button class="styled-button ml-16" (click)="cancelClicked()">Cancel</button>
+
+            <p *ngIf="errorInInput" class="text-danger">Input is incorrect</p>
+        </form>
+
+    </div>
+
+
+</div>

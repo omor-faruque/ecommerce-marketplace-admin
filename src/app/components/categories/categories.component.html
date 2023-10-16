@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>Categories</h2>
+    <input class="p-8" type="text" id="name" name="name" [(ngModel)]="newCategory" required>
+    <button class="styled-button m-10" (click)="addCategory()">Add Category</button>
+</div>
+
+<div class="container">
+    <ng-container *ngFor="let item of categories | async">
+        <div class="mt-16 col-lg-8 ta-center">
+            <div class="b-1-s-grey p-8 ff-Courier-New">
+                {{item.name}}, ID: {{item.id}}
+                <button *ngIf="item.id" class="styled-button m-10" (click)="deleteCategory(item.id)">Delete</button>
+            </div>
+        </div>
+    </ng-container>
+</div>

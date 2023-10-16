@@ -1,0 +1,14 @@
+<div class="card" *ngIf="product">
+    <img [src]="product.image" alt="Product Image">
+    <div class="card-content">
+        <h2 class="product-name">{{product.name}}</h2>
+        <p class="ff-Courier-New">Product ID: {{product.id}}</p>
+        <p class="ff-Poppins">Category: {{product.categoryName}}</p>
+        <p class="product-price ff-Courier-New">${{product.price}}</p>
+        <p class="product-description">{{product.description}}</p>
+        <div class="ta-center">
+            <button class="styled-button m-10" (click)="emitDeleteProductEvent(product.id)">Delete</button>
+            <button class="styled-button m-10" (click)="emitUpdateProductEvent(product)">Update</button>
+        </div>
+    </div>
+</div>
