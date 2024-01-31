@@ -1,4 +1,32 @@
 
 <div class="container">
     <h3>Orders</h3>
+    <div class="row-flex mt-16 ">
+        <div class="b-1-s-grey c-12 mb-16" *ngFor="let order of orders">
+            <div class="ff-Courier-New p-16">
+
+                <p class="ff-Bungee-Inline ls-1">Status: {{order.orderStatus}}</p>
+                <p >Date: {{order.orderDate}}</p>
+                <p>{{order.guestFullName}} </p>
+                <p>Email: {{order.guestEmail}}</p>
+
+                <div class="row-flex">
+                    <div *ngFor="let item of order.cartItems" class="row-flex col-4">
+                        <div class="col-md-5">
+                                <img [src]="item.product.image" [alt]="item.product.name" width="60px">
+                            
+                        </div>
+                        <div class="col-md-5 ml-24">
+                            <p>Product ID: {{item.product.id}}</p>
+                            <p>Name: {{item.product.name}}</p>
+                            <p>Quantity: {{item.quantity}}</p>
+                        </div>
+                
+                    </div>
+                </div>
+
+                <p class="ff-Bungee-Inline ls-1">Total: ${{order.totalAmount}}</p>
+            </div>
+        </div>
+    </div>
 </div>

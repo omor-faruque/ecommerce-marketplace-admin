@@ -5,7 +5,7 @@
     <div class="container">
         <div class="card-container">
             <ng-container *ngFor="let item of products">
-                <app-product-card [product]="item" (deleteProductEvent)="deleteProduct($event)" (updateProductEvent)="setProductToUpdate($event)"></app-product-card>
+                <app-product-card class="c-12 c-sm-6 c-md-4 c-lg-3" [product]="item" (deleteProductEvent)="deleteProduct($event)" (updateProductEvent)="setProductToUpdate($event)"></app-product-card>
                 
             </ng-container>
         </div>

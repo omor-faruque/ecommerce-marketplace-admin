@@ -14,6 +14,9 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { CardComponent } from './components/ui/card/card.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 
 
@@ -27,7 +30,10 @@ import { OrdersComponent } from './components/orders/orders.component';
     CategoriesComponent,
     ProductFormComponent,
     CardComponent,
-    OrdersComponent
+    OrdersComponent,
+    FooterComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
